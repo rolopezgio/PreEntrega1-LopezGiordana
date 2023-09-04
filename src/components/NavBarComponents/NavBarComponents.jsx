@@ -4,24 +4,24 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidgetComponent/CartWidgetComponent';
 import { Link } from 'react-router-dom';
+import "./NavBarComponents.css"; 
 
 const NavBarComponents = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand> <Link to="/">BINS</Link> </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Brand as={Link} to='/'><img src='../image/logo.png' alt='logo' className='logo'/></Navbar.Brand><Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Item> <Link to="/">Home</Link> </Nav.Item>
+            <Nav.Link as={Link} to='/'>Home</Nav.Link>
             <NavDropdown title="Categorías" id="basic-nav-dropdown">
-              <NavDropdown.Item><Link to={"/category/hombre"}>Hombre</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to={"/category/mujer"}>Mujer</Link></NavDropdown.Item>
+            <NavDropdown.Item as={Link}  to={"/category/Hombre"} >Hombre</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={"/category/Mujer"}>Mujer</NavDropdown.Item>
             </NavDropdown>
-          </Nav>          
+          </Nav>
         </Navbar.Collapse>
-        < CartWidget  />
-      </Container>      
+        < CartWidget />
+      </Container>
     </Navbar>
   );
 }

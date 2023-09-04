@@ -1,10 +1,8 @@
 import React from 'react'
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer"
-import { productsData } from '../json/ProductsData';
-
 const Home = () => {
 
-  return <ItemListContainer productsData={productsData} /> 
+  return <ItemListContainer /> 
 };
 
 export default Home;

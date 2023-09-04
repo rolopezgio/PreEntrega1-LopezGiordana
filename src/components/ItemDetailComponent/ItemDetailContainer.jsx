@@ -1,14 +1,15 @@
 import React from 'react'
+import { Card, ListGroup, Button } from 'react-bootstrap'
 
-const ItemDetailContainer = ({productData}) => {
-  return ( //Mejorar las cards, falta el detalle del producto
+const ItemDetailContainer = ({product}) => {
+  return (
 
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+      <Card.Img variant="top" src={product.image} />
       <Card.Body>
-        <Card.Title>{productData.nombre}</Card.Title>
+        <Card.Title>{product.nombre}</Card.Title>
         <Card.Text>
-          {productData.descripcion}
+          {product.descripcion}
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">

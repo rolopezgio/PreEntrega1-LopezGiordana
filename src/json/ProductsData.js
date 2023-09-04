@@ -4,7 +4,7 @@ export const productsData = [
      nombre: "Remera Hombre",
      descripcion: "jashkjdahjkdkajhdjsah",
      categoria: "Hombre",
-     image:"" //COMO PONER LA RUTA DE LA IMAGEN
+     image:"../image/remera-hombre-negra.jpg" //COMO PONER LA RUTA DE LA IMAGEN
 
     },
     {
@@ -12,7 +12,7 @@ export const productsData = [
         nombre: "Remera Hombre",
         descripcion: "jashkjdahjkdkajhdjsah",
         categoria: "Hombre",
-        image: ""
+        image: "../image/remera-hombre-bordo.jpg"
    
        },
        {
@@ -20,7 +20,7 @@ export const productsData = [
         nombre: "Buzo Hombre",
         descripcion: "jashkjdahjkdkajhdjsah",
         categoria: "Hombre",
-        image: ""
+        image: "../image/buzo-hombre.jpg"
    
        },
        {
@@ -28,7 +28,7 @@ export const productsData = [
         nombre: "Remera Mujer",
         descripcion: "jashkjdahjkdkajhdjsah",
         categoria: "Mujer",
-        image: ""
+        image: "../image/remera-mujer-salmon.jpg"
    
        },
        {
@@ -36,7 +36,7 @@ export const productsData = [
         nombre: "Remera Mujer",
         descripcion: "jashkjdahjkdkajhdjsah",
         categoria: "Mujer",
-        image: ""
+        image: "../image/remera-mujer-negra.jpg"
    
        },
        {
@@ -44,7 +44,16 @@ export const productsData = [
         nombre: "Top Mujer",
         descripcion: "jashkjdahjkdkajhdjsah",
         categoria: "Mujer",
-        image: ""
+        image: "../image/top-mujer.jpg"
    
        }
 ];
+
+export const getProducts = () => {
+   
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(productsData)
+      }, 2000);
+    });
+  };
