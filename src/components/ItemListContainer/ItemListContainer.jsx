@@ -27,7 +27,7 @@ const ItemListContainer = ({categoryId}) => {
                 return (
                     <Card style={{ width: '18rem' }} key={item.id}>
                         <Card.Img variant="top" src={item.image} />
-                        <Card.Body>
+                        <Card.Body className="cardBody">
                             <Card.Title>{item.nombre}</Card.Title>
                             <Card.Text>{item.descripcion}</Card.Text>
                             <Button variant="primary" onClick={() => navigate (`/item/${item.id}`)}>Ver producto</Button>
@@ -35,6 +35,7 @@ const ItemListContainer = ({categoryId}) => {
                     </Card>
                 );
             })}
+
         </div>
     );
 };

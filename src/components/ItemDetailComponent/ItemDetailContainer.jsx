@@ -1,26 +1,31 @@
 import React from 'react'
 import { Card, ListGroup, Button } from 'react-bootstrap'
+import "./ItemDetailContainer.css"
 
 const ItemDetailContainer = ({product}) => {
   return (
-
+    <div className="productoDetalles">
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={product.image} />
-      <Card.Body>
+      <Card.Body className="cardDetalleBody">
         <Card.Title>{product.nombre}</Card.Title>
         <Card.Text>
-          {product.descripcion}
+          {product.detalles}
+        </Card.Text>
+        <Card.Text>
+          {product.talles}
         </Card.Text>
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+      <ListGroup className="list-group-flush cardDetalleBody">
+        <ListGroup.Item>{product.precio}</ListGroup.Item>
+        <ListGroup.Item>{product.descuento}</ListGroup.Item>
+        <ListGroup.Item>{product.cuotas}</ListGroup.Item>
       </ListGroup>
-      <Card.Body>
+      <Card.Body className="cardDetalleBody">
         <Button>Agregar al carrito</Button>
       </Card.Body>
     </Card>
+    </div>
   )
 }
 
