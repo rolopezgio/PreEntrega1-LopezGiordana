@@ -2,22 +2,22 @@ import { useNavigate } from "react-router-dom";
 import "./ItemListContainer.css";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { getProducts } from "../../json/ProductsData";
 import { useEffect, useState } from "react";
+import { getDocs, collection, getFirestore } from 'firebase/firestore'
 
 
-const ItemListContainer = ({categoryId}) => {
+const ItemListContainer = () => {
     const[data, setData]= useState([])
+
     useEffect(()=>{
-        getProducts()
-        .then((res)=>{
-            if(categoryId){
-                setData(res.filter((item)=> item.categoria === categoryId))
-            }else{
-                setData(res)
-            }
+        const db = getFirestore();
+        const productsCollection = collection(db, 'products');
+        const productsFilter = productsCollection;
+        getDocs(productsFilter).then((snapshot) => {
+            setData(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
         })
-    },[categoryId])
+
+    },[])
 
     const navigate = useNavigate ();
 
@@ -41,5 +41,3 @@ const ItemListContainer = ({categoryId}) => {
 };
 
 export default ItemListContainer;
-
-

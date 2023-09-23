@@ -25,19 +25,15 @@ const ItemDetailContainer = ({ product }) => {
           <Card.Text>
             {product.detalles}
           </Card.Text>
-          <Card.Text>
-            {product.talles}
-          </Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush cardDetalleBody">
           <ListGroup.Item>{product.precio}</ListGroup.Item>
           <ListGroup.Item>{product.descuento}</ListGroup.Item>
-          <ListGroup.Item>{product.cuotas}</ListGroup.Item>
         </ListGroup>
         <Card.Body className="cardDetalleBody">
           <ItemCount />
           {stock >= 5 ? <strong>Stock disponible</strong> : <strong>Ultimas unidades disponibles!</strong>}
-          <button
+          <Button
             style={onAdd ? buttonStylesOnAdd : buttonStyles}
             onClick={() => {
               setStock(stock - 1);
@@ -45,7 +41,7 @@ const ItemDetailContainer = ({ product }) => {
             }}
           >
             Agregar al carrito
-          </button>
+          </Button>
         </Card.Body>
       </Card>
     </div>
