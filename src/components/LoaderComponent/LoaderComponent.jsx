@@ -1,19 +1,12 @@
-import { Waveform } from "@uiball/loaders";
+import { DotWave } from '@uiball/loaders'
+import "./LoaderComponent.css"
+
 
 const LoaderComponent = () => {
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Waveform size={40} lineWeight={3.5} speed={1} color="white" />
+    <div className="loader">
+    <DotWave size={47} speed={1} color="black"/>
     </div>
   );
 };
-
 export default LoaderComponent;

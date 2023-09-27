@@ -14,9 +14,10 @@ const NavBarComponents = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
-            <NavDropdown title="Categorías" id="basic-nav-dropdown">
-            <NavDropdown.Item as={Link}  to={"/category/Hombre"} >Hombre</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to={"/category/Mujer"}>Mujer</NavDropdown.Item>
+            <NavDropdown title="Marcas" id="basic-nav-dropdown">
+            <NavDropdown.Item as={Link}  to={"/category/Peugeot"} >Peugeot</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={"/category/Renault"}>Renault</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={"/category/Chevrolet"}>Chevrolet</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
