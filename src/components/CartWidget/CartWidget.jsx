@@ -4,10 +4,9 @@ import { CartContext } from "../../context/CartContext";
 const CartWidget = () => {
 
   const {cartItems} = useContext(CartContext);
-//Falta icono del carrito
   return (
     <div className="cartContainer">
-      <strong><i className="bi bi-cart-check"></i> {cartItems} </strong>  
+      <strong><i class="bi bi-cart-check"></i> {cartItems} </strong>  
     </div>
   );
 };

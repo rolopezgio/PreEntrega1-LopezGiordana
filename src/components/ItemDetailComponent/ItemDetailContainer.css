@@ -11,3 +11,10 @@
     justify-content: center;
     align-items: center;
 }
+.cardDetalleBodyContador{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(234, 234, 234);
+}

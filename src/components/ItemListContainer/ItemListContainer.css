@@ -1,8 +1,11 @@
 .productosContainer{
    display: flex;
    flex-wrap: wrap;
-   gap: 2rem;
+   align-items: center;
+   align-items: stretch;
+   justify-content: center;
    padding: 1rem;
+   gap: 1.5rem;
 }
 .cardBody {
     display: flex;

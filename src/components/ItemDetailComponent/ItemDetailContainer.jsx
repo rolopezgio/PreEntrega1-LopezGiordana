@@ -1,41 +1,30 @@
 import React from 'react'
 import { Card, ListGroup, Button } from 'react-bootstrap'
-import "./ItemDetailContainer.css"
 import ItemCount from '../ItemCount/ItemCount'
+import "./ItemDetailContainer.css"
 
 const ItemDetailContainer = ({ productData }) => {
 
-  const [onAdd, setOnAdd] = React.useState(false);
-
-  const buttonStyles = {
-    backgroundColor: "blue",
-  };
-
-  const buttonStylesOnAdd = {
-    backgroundColor: "green", //agregar emergente con producto agregado
-  };
-
   return (
     <div className="productoDetalles">
-      <Card style={{ width: '18rem' }}>
+      <h3>Detalles del producto</h3>
+      <br />
+      <Card style={{ width: '25rem' }}>
         <Card.Img variant="top" src={productData.image} />
+
         <Card.Body className="cardDetalleBody">
           <Card.Title>{productData.nombre}</Card.Title>
-          <Card.Text>
-            {productData.detalles}
-          </Card.Text>
+
+          <Card.Text>{productData.detalles}</Card.Text>
         </Card.Body>
+
         <ListGroup className="list-group-flush cardDetalleBody">
-          <ListGroup.Item>{productData.precio}</ListGroup.Item>          
-          <ListGroup.Item>{productData.stock}</ListGroup.Item>
+          <ListGroup.Item> USD {productData.precio}</ListGroup.Item> 
         </ListGroup>
-        <Card.Body className="cardDetalleBody">
+        <Card.Body className="cardDetalleBodyContador">
           <ItemCount />
-          <Button
-            style={onAdd ? buttonStylesOnAdd : buttonStyles}
-          >
-            Agregar al carrito
-          </Button>
+          <br />
+          <Button variant="outline-secondary"> Agregar producto </Button>
         </Card.Body>
       </Card>
     </div>
